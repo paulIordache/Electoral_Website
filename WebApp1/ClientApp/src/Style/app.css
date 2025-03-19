@@ -1,0 +1,44 @@
+﻿/* Ensures the entire app takes full height and uses flexbox for layout */
+.app-container {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background: #ffffff; /* Light background for a modern look */
+    margin: 0;
+}
+
+/* Navbar styling (assuming it's always visible at the top) */
+.navbar {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Main content area styling */
+.content-container {
+    flex: 1; /* Takes remaining height */
+    overflow-y: scroll; /* Enables scrolling if content exceeds height */
+    padding: 40px 60px;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Hide scrollbar */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.content-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .content-container {
+        padding: 20px;
+    }
+}

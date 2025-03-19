@@ -1,0 +1,100 @@
+.nav {
+    background-color: #ffffff;
+    padding-top: 0px; /* To account for fixed header height */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.nav:hover {
+    background-color: #fdfcfc; /* Change background color on hover */
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: 2px solid #020202;
+}
+
+.nav li {
+    margin: 0 20px;
+    font-size: 16px;
+    font-family: 'Times New Roman', serif;
+    position: relative; /* For dropdown effect */
+}
+
+.nav li a {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+}
+
+.nav li a.active {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000; /* Change color for active link */
+}
+
+.nav li a:hover {
+    text-decoration: none;
+    color: #000000; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.nav li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000000;
+    transition: width 0.7s;
+}
+
+.nav li a:hover::after {
+    width: 100%; /* Full width underline on hover */
+}
+
+.nav li:hover ul {
+    display: block; /* Show dropdown on hover */
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    z-index: 1000;
+}
+
+.nav li ul li {
+    margin: 0;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.nav li ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav li ul li a:hover {
+    color: #145181;
+    text-decoration: underline;
+}
+
+/* Fixed positioning for navbar container */
+.navbar-container {
+    position: fixed;
+    top: 47px; /* Adjust this value to match the height of the Header */
+    width: 100%;
+    z-index: 999; /* Less than header z-index */
+}

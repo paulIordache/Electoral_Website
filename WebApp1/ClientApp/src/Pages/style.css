@@ -1,0 +1,653 @@
+﻿@font-face {
+    font-family: "Engravers" ;
+    src: url(fonts/Engravers_Old_English_Bold.otf)
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+    Page Layout
+   =========================
+*/
+
+.container {
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    width: 100vw;
+}
+
+
+
+
+/* =========================
+    Lists
+   =========================
+*/
+
+ul {
+    list-style: none;
+}
+
+/* =========================
+    Links
+   =========================
+*/
+
+/* =========================
+    Navigation
+   =========================
+*/
+
+nav {
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    background: white;
+    width: 100%;
+}
+
+nav ul {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: .9em;
+    padding: 0 10px;
+}
+
+nav ul li {
+    font-weight: bold;
+    position: relative;
+    flex: 1 0 auto;
+}
+
+nav ul li:nth-of-type(-n+3) {
+    flex: .5;
+}
+
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+
+
+.has-children ul, .has-children ul .has-children ul, .has-children .has-children h4 {
+    display: none;
+    border: 1px solid lightgray;
+    position: absolute;
+    top: -8px;
+    left: 0;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+    width: 200px;
+    z-index: 2;
+    background: white;
+    opacity: 1;
+}
+
+.has-children ul .has-children ul, .has-children .has-children h4 {
+    height: auto;
+}
+
+.has-children ul .has-children ul, .has-children .has-children h4 {
+    left: 100%;
+    top: -8px;
+}
+
+.has-children ul li {
+    padding: 5px 5px;
+    text-align: left;
+    width: 100%;
+}
+
+.has-children ul li:hover {
+    background: rgb(204, 226, 255);
+}
+
+.active ul {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logo {
+    text-align: center;
+    font-family: "Engravers";
+    letter-spacing: .5px;
+    font-size: 1.5em;
+    flex: 8;
+}
+
+nav button {
+    color: white;
+    background: #386385;
+    padding: 7px 10px;
+    height: 30px;
+    border: none;
+    min-width: 53px;
+    border-radius: 2px;
+    font-size: .75em;
+    font-weight: bold;
+}
+
+.subscribe-btn {
+    width: 120px;
+}
+
+
+/* =========================
+    Article
+   =========================
+*/
+
+article {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px;
+    border-bottom: 2px solid black; /* Black line separating articles */
+    padding-bottom: 20px;
+}
+
+/* Header Style */
+article h1 {
+    font-style: italic;
+    max-width: 600px;
+    margin: 0;
+    padding: 20px;
+    text-align: left;
+    font-size: 2.25em;
+}
+
+/* Subheader Style */
+article h4 {
+    max-width: 600px;
+    margin: 0;
+    text-align: justify;
+    padding: 5px 20px;
+    font-size: 1.5em;
+}
+
+/* Paragraph Style */
+article p {
+    max-width: 600px;
+    margin: 0;
+    line-height: 1.25em;
+    text-align: justify;
+    font-size: 1.25em;
+    font-weight: 500;
+    padding: 20px;
+}
+
+.caps {
+    text-transform: uppercase;
+}
+
+
+/* =========================
+    Images
+   =========================
+*/
+
+.image {
+    max-width: 40%;
+    margin: 0;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image figcaption {
+    padding: 10px;
+    color: rgb(95, 93, 93);
+    text-align: left;
+    width: 80%;
+    max-width: 945px;
+}
+
+.image figcaption span {
+    font-size: .7em;
+    color: darkgray;
+}
+
+
+
+
+
+/* =========================
+    Related Articles
+   =========================
+*/
+
+.more-articles {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.related {
+    grid-row: span 2;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    border-top: 1px solid black;
+}
+
+.related-stories {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.editor-picks {
+    padding: 10px;
+    border-top: 1px solid black;
+    max-height: 350px;
+    overflow: hidden;
+}
+
+.editor-picks .story {
+    padding-bottom: 50px;
+}
+
+.story {
+    flex: 1;
+    min-width: 220px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.story h2 {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.story h5 {
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    padding-top: 5px;
+}
+
+.story img {
+    width: 100%;
+}
+
+.popular {
+    grid-row: 1 / span 3;
+    font-size: .8em;
+    grid-column: 2 / 3;
+    padding: 10px;
+    border-top: 1px solid black;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.popular h4, .related h4, .editor-picks h4 {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px 0;
+}
+
+.popular h4 {
+    border-bottom: 1px solid lightgray;
+}
+
+.popular ul li {
+    padding: 15px 0;
+    font-size: 1.25em;
+    border-bottom: 1px solid lightgray;
+}
+
+.popular ul li:last-child {
+    border: none;
+}
+/* =========================
+    Footer
+   =========================
+*/
+
+#goToHome {
+    color:  #145181;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .5em;
+    font-weight: lighter;
+    float: right;
+}
+
+.primary-footer {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 30px;
+    border-top: 4px double lightgray;
+
+}
+
+.primary-footer h1 {
+    text-align: left;
+}
+
+.listings {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.listings ul li:first-child {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: .8rem;
+}
+
+.listings ul ul li:hover {
+    text-decoration: underline;
+}
+
+.listings ul .has-sub ul {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+
+.listings ul .has-sub ul li {
+    text-transform: capitalize;
+    font-weight: 400;
+    padding: 5px 0;
+}
+
+.subscribe {
+    border-left: 1px solid lightgray;
+    padding-left: 20px;
+}
+
+.subscribe ul li:nth-child(4), .subscribe ul li:nth-child(7) {
+    border-bottom: 1px solid lightgray;
+}
+
+.css-r5ic95 {
+    width: 12px;
+    font-weight: bold;
+}
+
+.listings .subscribe ul li:nth-child(-n+4) {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.listings .subscribe ul li {
+    font-size: .7em;
+}
+
+.secondary-footer {
+    border-top: 1px solid lightgray;
+    font-size: 0.7em;
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+
+    justify-content: center;
+}
+
+.secondary-footer ul {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    padding: 10px;
+    width: 90%;
+}
+
+.secondary-footer ul li {
+    min-width: 100px;
+    padding: 5px;
+    flex: 1;
+}
+
+.secondary-footer ul li:first-child {
+    flex: 5;
+}
+
+
+
+
+@media only screen and (max-width: 1150px) {
+    .primary-footer h1, .listings ul li:first-child {
+        border-bottom: 1px solid lightgray;
+        padding: 12px 0;
+    }
+
+    .listings ul:nth-of-type(5) .has-sub {
+        border-bottom: none;
+    }
+
+    .listings {
+        flex-direction: column;
+    }
+
+    .has-sub ul, .subscribe {
+        display: none;
+        columns: 2;
+
+    }
+
+    .has-sub ul li:first-child {
+        border-bottom: none;
+    }
+
+
+    .active ul {
+        display: block;
+        color: black;
+    }
+
+    .active {
+        color: rgb(184, 179, 179);
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+    article h1 {
+        padding: 10px;
+    }
+
+    .popular {
+        display: none;
+    }
+
+    .more-articles {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .image figcaption {
+        width: 100%;
+    }
+}
+
+/* =========================
+    Sidebar
+   =========================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+/* Sidebar */
+.sidebar {
+    display: inline-block;
+    width: 25%; /* Adjust the width of the sidebar */
+    padding: 20px;
+    vertical-align: top;
+    border-left: 2px solid #d5d5d5; /* Line between sidebar and main content */
+    background-color: #f9f9f9; /* Light background for sidebar */
+    font-family: 'Georgia', serif; /* Set font to Georgia */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners for the sidebar */
+}
+
+.sidebar h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #386385;
+    border-bottom: 2px solid #386385; /* Line under the heading */
+    padding-bottom: 8px;
+}
+
+.sidebar p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.sidebar img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.sidebar a {
+    font-size: 1em;
+    color: #145181;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #f0f8ff; /* Light blue background for links */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #386385; /* Darker blue on hover */
+    color: #fff;
+    text-decoration: underline;
+}
+
+.sidebar .important-keyword {
+    color: red;
+    font-weight: bold;
+}
+
+.sidebar .social-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.sidebar .social-icons a {
+    color: #386385;
+    font-size: 1.3em;
+}
+
+.sidebar .social-icons a:hover {
+    color: #145181;
+}
+
+/* New Section: More Articles */
+.sidebar .more-articles {
+    margin-top: 30px;
+    border-top: 2px solid #d5d5d5; /* Line separating 'More Articles' section */
+    padding-top: 15px;
+}
+
+.sidebar .more-articles h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #386385;
+    border-bottom: 2px solid #386385;
+    padding-bottom: 8px;
+}
+
+.sidebar .more-articles ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar .more-articles ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #333;
+    border-bottom: 1px solid #d5d5d5; /* Line between articles */
+    padding-bottom: 8px;
+}
+
+.sidebar .more-articles ul li:last-child {
+    border: none;
+}
+
+.sidebar .more-articles ul li a {
+    color: #145181;
+    text-decoration: none;
+}
+
+.sidebar .more-articles ul li a:hover {
+    color: #386385;
+}
+
+.main-content {
+    flex: 1; /* Allow this element to take up remaining space */
+    padding: 20px;
+    margin-left: 200px; /* Adjust space for sidebar */
+    transition: margin-left 0.3s ease; /* Smooth transition */
+}
+
+.layout-wrapper {
+    display: flex;
+    justify-content: space-between; /* Ensures sidebar and article are side by side */
+    width: 100%; /* Make sure it takes up the full width of the container */
+    margin-top: 50px; /* Add margin to avoid overlap with the fixed navbar */
+}
+
+
+
+
+@media only screen and (max-width: 1150px) {
+    .sidebar {
+        width: 100%; /* Full width on smaller screens */
+        height: auto;
+        position: relative;
+        top: 0; /* Reset position on smaller screens */
+        box-shadow: none; /* Remove shadow on smaller screens */
+    }
+
+    .sidebar h2 {
+        font-size: 1.4em; /* Adjust header size for smaller screens */
+    }
+
+    .sidebar p {
+        font-size: 1.1em; /* Slightly smaller text for better mobile readability */
+    }
+
+    .sidebar .social-icons a {
+        font-size: 1.3em; /* Adjust social icons size */
+    }
+}

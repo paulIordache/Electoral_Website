@@ -1,0 +1,98 @@
+﻿.candidates-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.candidates-container .title {
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    margin-bottom: 40px;
+}
+
+.candidates-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+.candidate-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 250px;
+    margin: 15px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer; /* Add pointer cursor */
+    transition: all 0.3s ease; /* Smooth transition */
+    z-index: 1; /* Default z-index */
+}
+
+.candidate-card.expanded {
+    position: absolute; /* Absolute position for expanded card */
+    top: 20px; /* Adjust this value as needed */
+    left: 50%;
+    transform: translateX(-50%); /* Center the card horizontally */
+    width: 80%; /* Expand the width */
+    height: auto; /* Allow the height to adjust based on content */
+    z-index: 10; /* Bring the expanded card to the top */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add more shadow */
+    background-color: #fff; /* Ensure background color is consistent */
+}
+
+.candidate-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add hover effect */
+}
+
+.candidate-description {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.candidate-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.candidate-name a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
+
+.candidate-name a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.candidate-name {
+    font-size: 20px;
+    margin: 15px 0 10px;
+    font-family: 'Times New Roman', serif;
+}
+
+.candidate-party {
+    font-size: 14px;
+    color: #555;
+    font-family: Arial, sans-serif;
+}
+
+.loading,
+.error {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .candidates-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .candidate-card {
+        width: 80%;
+    }
+}

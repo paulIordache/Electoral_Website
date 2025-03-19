@@ -1,0 +1,13 @@
+﻿.vote-results-chart {
+    padding: 20px;
+    text-align: center;
+}
+
+.vote-results-chart h2 {
+    margin-bottom: 20px;
+}
+
+.vote-results-chart canvas {
+    max-width: 100%;
+    height: auto;
+}

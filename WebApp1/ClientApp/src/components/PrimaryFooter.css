@@ -1,0 +1,68 @@
+#goToHome {
+    color: #145181;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.5em;
+    font-weight: lighter;
+    float: right;
+}
+
+.primary-footer {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 30px;
+    border-top: 4px double lightgray;
+}
+
+.primary-footer h1 {
+    text-align: left;
+    position: relative;
+}
+
+.listings {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.listings ul li:first-child {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 0.8rem;
+}
+
+.listings ul ul li:hover {
+    text-decoration: underline;
+}
+
+.listings ul .has-sub ul {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.listings ul .has-sub ul li {
+    text-transform: capitalize;
+    font-weight: 400;
+    padding: 5px 0;
+    font-family: Georgia, serif;
+}
+
+.subscribe {
+    border-left: 1px solid lightgray;
+    padding-left: 20px;
+}
+
+.subscribe ul li:nth-child(4),
+.subscribe ul li:nth-child(7) {
+    border-bottom: 1px solid lightgray;
+}
+
+.listings .subscribe ul li:nth-child(-n+4) {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.listings .subscribe ul li {
+    font-size: 0.7em;
+    font-family: Georgia, serif;
+}

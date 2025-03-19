@@ -1,0 +1,141 @@
+﻿@font-face {
+    font-family: "Engravers";
+    src: url(../Pages/fonts/Engravers_Old_English_Bold.otf);
+}
+
+.header {
+    background-color: #fff;
+    color: #333;
+    padding: 5px 15px;
+    border-bottom-width: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: #000000;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+    will-change: transform; /* Optimizes performance */
+}
+
+.header.scrolled-down {
+    transform: translateY(-100%); /* Hide header by moving it up */
+    box-shadow: none; /* Remove shadow */
+}
+
+.header.scrolled-up {
+    transform: translateY(0); /* Show header by moving it back to its original position */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.0); /* Add shadow */
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.date {
+    font-size: 12px;
+    color: #555;
+    margin: 0;
+}
+
+.link {
+    font-size: 15px;
+    color: #000000;
+}
+
+.link a {
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+}
+
+.link a:hover {
+    color: #000000;
+}
+
+.link a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #145181;
+    transition: width 0.3s;
+    text-decoration: none;
+}
+
+.link a:hover::after {
+    width: 0%; /* Full width underline on hover */
+}
+
+.title {
+    font-size: 40px;
+    font-family: "Engravers";
+}
+
+.link .title h1 {
+    color: #000000;
+}
+
+.subscribe .subscribe-btn {
+    color: white;
+    background: #386385;
+    padding: 3px 8px;
+    border: none;
+    border-radius: 2px;
+    font-size: 0.7em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe .subscribe-btn:hover {
+    background-color: #2e5070;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease; /* Smooth fade-in animation */
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.dropdown ul li {
+    margin: 0;
+}
+
+.dropdown ul li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+.link:hover .dropdown {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

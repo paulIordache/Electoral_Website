@@ -1,0 +1,31 @@
+﻿button {
+    color: white;
+    background: #386385;
+    padding: 7px 10px;
+    height: 30px;
+    border: none;
+    min-width: 53px;
+    border-radius: 2px;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+.subscribe-btn {
+    width: 120px;
+}
+
+.cta-button {
+    color: white;
+    background-color: #386385;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #2e5070;
+}

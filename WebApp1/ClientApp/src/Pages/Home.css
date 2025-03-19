@@ -1,0 +1,27 @@
+﻿.home-container {
+    font-family: 'Georgia', serif;
+    color: #333;
+    background-color: #ffffff; /* Light background color for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/*.main-content {*/
+/*    padding: 20px;*/
+/*    margin-top: 120px; !* Adjust based on header and navbar height *!*/
+/*}*/
+
+
+.secondary-articles {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.secondary-articles > * {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+}

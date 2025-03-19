@@ -1,0 +1,11 @@
+﻿.candidate-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.candidate-list li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
